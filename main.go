@@ -41,7 +41,7 @@ func main() {
 		"nonlinear",
 		"notaword",
 		"notattached", // missed this candidate validation
-		"directions",  // fix for notattached case to stringent
+		"directions",  // fix for notattached case too stringent
 	}
 	log.Println(completedLevels)
 	playLevel(currentLevel)
