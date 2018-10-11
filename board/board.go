@@ -35,10 +35,7 @@ func NewBoardFromJSON(boardJSON []byte) Board {
 func (b Board) String() string {
 	s := "Board:\n"
 	for _, row := range b.Board {
-		// Print gaps
-		// if i == 0 || i == len(b.Board)-1 {
 		s += fmt.Sprintln(strings.Repeat("-", len(b.Board[0])*2))
-		// }
 		for _, col := range row {
 			if col == "" {
 				col = " "
@@ -47,6 +44,7 @@ func (b Board) String() string {
 		}
 		s += "\n"
 	}
+	s += fmt.Sprintln(strings.Repeat("-", len(b.Board[0])*2))
 	bytes, _ := json.MarshalIndent(b.Candidate, "", " ")
 	return s + "\nCandidate:\n" + string(bytes)
 }
